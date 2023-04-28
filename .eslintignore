@@ -2,3 +2,4 @@ src/*.test.ts
 node_modules
 vite.config.ts
 src/stories
+_templates
