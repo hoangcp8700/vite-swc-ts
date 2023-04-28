@@ -14,13 +14,17 @@ module.exports = {
   parserOptions: {
     ecmaVersion: 'latest',
     sourceType: 'module',
+    ecmaFeatures: {
+      jsx: true,
+    },
     project: './tsconfig.json',
   },
-  plugins: ['react-refresh', '@typescript-eslint', 'import', 'jsx-a11y', 'prettier'],
+  plugins: ['react-refresh', 'react', 'react-hooks', '@typescript-eslint', 'import', 'jsx-a11y', 'prettier'],
   rules: {
     'react-refresh/only-export-components': 'warn',
     'react/function-component-definition': 0,
     'react/react-in-jsx-scope': 0,
+    'import/no-extraneous-dependencies': ['error', { devDependencies: true }],
 
     camelcase: 'error',
     'consistent-return': 'off',
