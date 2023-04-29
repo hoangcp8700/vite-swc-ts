@@ -8,7 +8,6 @@ module.exports = {
     'plugin:@typescript-eslint/recommended',
     'plugin:react-hooks/recommended',
     'airbnb',
-    'airbnb-typescript',
     'airbnb/hooks',
     'plugin:import/typescript',
     'plugin:prettier/recommended',
@@ -21,7 +20,6 @@ module.exports = {
     ecmaFeatures: {
       jsx: true,
     },
-    project: './tsconfig.json',
   },
   plugins: ['react-refresh', 'react', 'react-hooks', '@typescript-eslint', 'import', 'jsx-a11y', 'prettier'],
   settings: {
@@ -52,6 +50,7 @@ module.exports = {
             devDependencies: ['src/setupTests.ts', 'src/**/*.stories.tsx', 'src/**/*.test.{ts,tsx}'],
           },
         ],
+
         'no-param-reassign': [
           'error',
           {
@@ -65,12 +64,6 @@ module.exports = {
         'import/prefer-default-export': 'off',
         'react/require-default-props': 'off',
         'react/no-unused-prop-types': 'off',
-
-        // '@typescript-eslint/no-unused-vars': ['error', { argsIgnorePattern: '^_' }],
-        // '@typescript-eslint/no-explicit-any': 'error',
-        // '@typescript-eslint/no-empty-interface': 'off',
-        // '@typescript-eslint/indent': 'off',
-        // '@typescript-eslint/no-unused-expressions': ['off'],
       },
     },
   ],
