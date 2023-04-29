@@ -1,5 +1,5 @@
 export const CONSTANTS = {
-  DOMAIN_CLIENT: process.env.REACT_DOMAIN_CLIENT,
+  DOMAIN_CLIENT: 'http://localhost:3000',
   VIDEO_DUMMY: 'http://commondatastorage.googleapis.com/gtv-videos-bucket/sample/BigBuckBunny.mp4',
   IMAGE_DUMMY: 'https://source.unsplash.com/random',
   LOCAL_STORAGE: {

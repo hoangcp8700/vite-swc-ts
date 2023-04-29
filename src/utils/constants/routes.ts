@@ -1,11 +1,7 @@
 export const CONSTANT_ROUTE = {
   ROOT: '/',
-  PRODUCTS: '/products',
-  CART: '/carts',
+  HOME: '/home',
   CATEGORY: '/categories',
-  NEWS_DETAIL: '/news-detail',
-  ABOUT_US: '/about-us',
-  INTRODUCE: '/introduce',
 
   PROFILE: '/profile',
   FORUM: '/forum',

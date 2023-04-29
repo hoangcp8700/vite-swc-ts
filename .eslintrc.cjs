@@ -64,6 +64,7 @@ module.exports = {
         'import/prefer-default-export': 'off',
         'react/require-default-props': 'off',
         'react/no-unused-prop-types': 'off',
+        '@typescript-eslint/no-empty-interface': 'off',
       },
     },
   ],
