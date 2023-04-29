@@ -10,6 +10,7 @@ import <%= h.changeCase.pascal(name) %> from '.';
 export default {
   title: 'Components/<%= level %>/<%= h.changeCase.pascal(name) %>',
   component: <%= h.changeCase.pascal(name) %>,
+  tags: ['autodocs'],
   argTypes: {},
 } as ComponentMeta<typeof <%= h.changeCase.pascal(name) %>>;
 

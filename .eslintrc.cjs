@@ -1,5 +1,8 @@
 module.exports = {
-  env: { browser: true, es2020: true },
+  env: {
+    browser: true,
+    es2020: true,
+  },
   extends: [
     'eslint:recommended',
     'plugin:@typescript-eslint/recommended',
@@ -9,6 +12,7 @@ module.exports = {
     'airbnb/hooks',
     'plugin:import/typescript',
     'plugin:prettier/recommended',
+    'plugin:storybook/recommended',
   ],
   parser: '@typescript-eslint/parser',
   parserOptions: {
@@ -20,18 +24,34 @@ module.exports = {
     project: './tsconfig.json',
   },
   plugins: ['react-refresh', 'react', 'react-hooks', '@typescript-eslint', 'import', 'jsx-a11y', 'prettier'],
+  settings: {
+    'import/parsers': {
+      '@typescript-eslint/parser': ['.ts', '.tsx'],
+    },
+    'import/resolver': {
+      node: {
+        extensions: ['.js', '.jsx', '.ts', '.tsx'],
+      },
+    },
+    react: {
+      version: 'detect', // Tells eslint-plugin-react to automatically detect the version of React to use
+    },
+  },
   rules: {
     'react-refresh/only-export-components': 'warn',
     'react/function-component-definition': 0,
     'react/react-in-jsx-scope': 0,
-    'import/no-extraneous-dependencies': ['error', { devDependencies: true }],
-
+    'import/no-extraneous-dependencies': [
+      'error',
+      {
+        devDependencies: true,
+      },
+    ],
     camelcase: 'error',
     'consistent-return': 'off',
     'no-unused-vars': 'off',
     'no-console': 'off',
     'no-plusplus': 'off',
-
     'import/order': [
       'error',
       {
