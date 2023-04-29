@@ -3,6 +3,8 @@
   "private": true,
   "version": "0.0.0",
   "type": "module",
+  "description": "React boilerplate with Vite SWC",
+  "author": "Hoang Cong Phan <hoangcp219@gmail.com>",
   "keywords": [
     "vite",
     "swc",
@@ -15,22 +17,22 @@
     "husky",
     "hygen"
   ],
+  "engines": {
+    "node": ">=18.0.0"
+  },
   "scripts": {
     "dev": "vite --port 3000 --open",
     "build": "tsc && vite build",
-    "lint": "eslint src --ext ts,tsx --report-unused-disable-directives --max-warnings 0",
     "type-check": "tsc --pretty --noEmit",
     "preview": "vite preview",
+    "lint": "eslint src --ext ts,tsx --report-unused-disable-directives --max-warnings 0",
     "prettier": "prettier --write src/**/*.{ts,tsx,css,json} --config ./.prettierrc",
     "gen:component": "hygen components new",
     "gen:page": "hygen pages new",
     "gen:container": "hygen containers new",
-    "prepare": "husky install",
     "storybook": "storybook dev -p 6006",
-    "build-storybook": "storybook build"
-  },
-  "engines": {
-    "node": ">=18.0.0"
+    "build-storybook": "storybook build",
+    "prepare": "husky install"
   },
   "dependencies": {
     "clsx": "^1.2.1",
