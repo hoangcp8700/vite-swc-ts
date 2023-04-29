@@ -2,13 +2,13 @@
 to: src/pages/<%= h.inflection.capitalize(name) %>.tsx
 ---
 import React from 'react';
-import SEO from '@components/common/SEO';
+import Helmet from '@components/common/Helmet';
 
 const <%= h.changeCase.pascal(name) %>Page: React.FC = () => (
-  <div>
-    <SEO />
+  <>
+    <Helmet />
     Page <%= h.changeCase.pascal(name) %>
-  </div>
+  </>
 );
 
 export default <%= h.changeCase.pascal(name) %>Page;

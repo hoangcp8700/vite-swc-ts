@@ -3,6 +3,8 @@ import { viewports } from './utils/viewports';
 
 import React from 'react';
 
+import '../src/index.css';
+
 const preview: Preview = {
   parameters: {
     actions: { argTypesRegex: '^on[A-Z].*' },

@@ -37,21 +37,51 @@ module.exports = {
       version: 'detect', // Tells eslint-plugin-react to automatically detect the version of React to use
     },
   },
+  overrides: [
+    {
+      files: ['*.ts', '*.tsx'],
+      // Your TypeScript files extension
+      parserOptions: {
+        project: './tsconfig.json', // Specify it only for TypeScript files
+      },
+      extends: 'airbnb-typescript',
+      rules: {
+        'import/no-extraneous-dependencies': [
+          'error',
+          {
+            devDependencies: ['src/setupTests.ts', 'src/**/*.stories.tsx', 'src/**/*.test.{ts,tsx}'],
+          },
+        ],
+        'no-param-reassign': [
+          'error',
+          {
+            props: true,
+            ignorePropertyModificationsFor: ['$state', '$config'],
+          },
+        ],
+        'react/function-component-definition': 0,
+        'react/react-in-jsx-scope': 0,
+        'react/jsx-props-no-spreading': 'off',
+        'import/prefer-default-export': 'off',
+        'react/require-default-props': 'off',
+        'react/no-unused-prop-types': 'off',
+
+        // '@typescript-eslint/no-unused-vars': ['error', { argsIgnorePattern: '^_' }],
+        // '@typescript-eslint/no-explicit-any': 'error',
+        // '@typescript-eslint/no-empty-interface': 'off',
+        // '@typescript-eslint/indent': 'off',
+        // '@typescript-eslint/no-unused-expressions': ['off'],
+      },
+    },
+  ],
   rules: {
     'react-refresh/only-export-components': 'warn',
-    'react/function-component-definition': 0,
-    'react/react-in-jsx-scope': 0,
-    'import/no-extraneous-dependencies': [
-      'error',
-      {
-        devDependencies: true,
-      },
-    ],
+
     camelcase: 'error',
     'consistent-return': 'off',
-    'no-unused-vars': 'off',
     'no-console': 'off',
     'no-plusplus': 'off',
+
     'import/order': [
       'error',
       {
