@@ -1,40 +1,36 @@
-import React, { useMemo } from 'react';
-import { CONSTANT_ROUTE } from '@utils/constants';
-import { RouterProvider, createBrowserRouter } from 'react-router-dom';
-import Loading from '@components/atoms/Loading';
+import { Suspense } from 'react';
+import { CONSTANT_ROUTE } from '@shared/utils/constants';
+import { useRoutes } from 'react-router-dom';
 
 import { Category, Error, Home, LayoutDefault } from './PageLazy';
 
 const AppRouter = () => {
-  const router = useMemo(
-    () =>
-      createBrowserRouter([
+  const router = useRoutes([
+    {
+      loader: () => null,
+      children: [
         {
-          loader: () => null,
+          element: <LayoutDefault />,
           children: [
             {
-              element: <LayoutDefault />,
-              children: [
-                {
-                  path: CONSTANT_ROUTE.ROOT,
-                  element: <Home />,
-                },
-                {
-                  path: CONSTANT_ROUTE.CATEGORY,
-                  element: <Category />,
-                },
-              ],
+              path: CONSTANT_ROUTE.ROOT,
+              element: <Home />,
             },
             {
-              element: <Error />,
-              path: '*',
+              path: CONSTANT_ROUTE.CATEGORY,
+              element: <Category />,
             },
           ],
         },
-      ]),
-    [],
-  );
-  return <RouterProvider router={router} fallbackElement={<Loading />} />;
+        {
+          element: <Error />,
+          path: '*',
+        },
+      ],
+    },
+  ]);
+
+  return <Suspense fallback={<LayoutDefault />}>{router}</Suspense>;
 };
 
 export default AppRouter;

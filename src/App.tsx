@@ -1,21 +1,19 @@
-import React, { Suspense } from 'react';
+import React from 'react';
 import { HelmetProvider } from 'react-helmet-async';
 import AppRouter from '@routes';
-import Loading from '@components/atoms/Loading';
-import './styles/index.scss';
+import './shared/styles/index.css';
+import { BrowserRouter } from 'react-router-dom';
 
 // ------------------------------------------
 
-const App = () => (
-  <Suspense fallback={<Loading />}>
-    <AppRouter />
-  </Suspense>
-);
+const App = () => <AppRouter />;
 
 const AppWrapper: React.FC = () => (
-  <HelmetProvider>
-    <App />
-  </HelmetProvider>
+  <BrowserRouter>
+    <HelmetProvider>
+      <App />
+    </HelmetProvider>
+  </BrowserRouter>
 );
 
 export default AppWrapper;

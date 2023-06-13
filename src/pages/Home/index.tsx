@@ -1,6 +1,5 @@
 import { useState } from 'react';
-
-import reactLogo from '@/assets/images/react.svg';
+import reactLogo from '@shared/assets/images/react.svg';
 
 const Home = () => {
   const [count, setCount] = useState(0);
