@@ -1,5 +1,3 @@
-@import './global';
-
 @import './taildwindcss.css';
-
-@import './App';
+@import './fonts';
+@import './global';
