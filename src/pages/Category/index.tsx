@@ -1,11 +1,5 @@
 import React from 'react';
-import Helmet from '@shared/components/common/Helmet';
 
-const CategoryPage: React.FC = () => (
-  <>
-    <Helmet />
-    Page Category
-  </>
-);
+const CategoryPage: React.FC = () => <div>Page Category</div>;
 
 export default CategoryPage;

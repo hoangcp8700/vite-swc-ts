@@ -1,11 +1,5 @@
 import React from 'react';
-import Helmet from '@shared/components/common/Helmet';
 
-const ErrorPage: React.FC = () => (
-  <>
-    <Helmet />
-    Page Error
-  </>
-);
+const ErrorPage: React.FC = () => <div>Page Error</div>;
 
 export default ErrorPage;

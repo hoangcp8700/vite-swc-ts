@@ -1,18 +1,13 @@
-import React from 'react';
-import { HelmetProvider } from 'react-helmet-async';
-import AppRouter from '@routes';
 import './shared/styles/index.css';
+
+import AppRouter from '@routes';
+import React from 'react';
 import { BrowserRouter } from 'react-router-dom';
 
-// ------------------------------------------
-
 const App = () => <AppRouter />;
-
 const AppWrapper: React.FC = () => (
   <BrowserRouter>
-    <HelmetProvider>
-      <App />
-    </HelmetProvider>
+    <App />
   </BrowserRouter>
 );
 
